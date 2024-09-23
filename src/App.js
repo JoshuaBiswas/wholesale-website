@@ -1,14 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Header from './lib/sections/Header';
+import MainContent from './lib/sections/MainContent';
+import Footer from './lib/sections/Footer';
 
 function App() {
+  const [activeTab, setActiveTab] = useState('About');
+
+  const handleTabClick = (tabName) => {
+    setActiveTab(tabName);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>Hello from V2</h1>
-      </header>
+    <div>
+      <Header activeTab={activeTab} onTabClick={handleTabClick} />
+      <MainContent activeTab={activeTab} />
+      <Footer activeTab={activeTab} onTabClick={handleTabClick} />
     </div>
   );
 }

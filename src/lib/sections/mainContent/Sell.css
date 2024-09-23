@@ -1,0 +1,11 @@
+
+.sell-container {
+    background-image: url(../../assets/sell.webp);
+    height: 800px;
+}
+.center-widget {
+    display: flex;
+    place-items: center;
+    justify-content: center;
+    align-items: center;
+}
